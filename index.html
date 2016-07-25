@@ -4,10 +4,14 @@
 	<meta charset="utf-8">﻿
 	<title>Snapcam HTML5</title>
 	<style>
+		body{
+			text-align: center;
+		}
 		video{
 			display: none;
 		}
 		#camara{
+			display: inline-block;
 			position: relative;
 			border: solid 1px;
 			height: 480px;
@@ -25,23 +29,50 @@
 			background-color: rgba(230,230,0.6);
 			width: 100px;
 			height: 100px;
+			border: solid 5px #fff;
+			left: calc(50% - 50px);
+		}
+		#actions{
+			position: absolute;
+			right: 2em;
+			top: 1em;
+			z-index: 10;
+			display: none;
+		}
+		#actions img{
+			width: 30px;
+		}
+		#link{
+			display: none;
+		}
+		#actions a{
+			margin-right: 1em;
 		}
 	</style>
 </head>
 <body>
 
+	<a id="link"></a>
+
 	<div id="camara">
+		<div id="actions">
+			<a id="download">
+				<img src="images/download.png">
+			</a>
+			<a id="sticker">
+				<img src="images/stickers.png">
+			</a>			
+		</div>
 		<canvas id="canvas" height="600" width="400"></canvas>
 		<button id="snap"> </button>
 	</div>
 
 
-	<canvas id="canvas"></canvas>
+	
 	<video id="video" autoplay="true"></video>
 	<script src="source/camara.js"></script>
-	<script>
-		new Camara("video","canvas")
-	</script>
+	<script src="source/main.js"></script>
+
 </body>
 </html>
  

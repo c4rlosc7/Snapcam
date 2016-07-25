@@ -1,5 +1,5 @@
 class Camara{
-	constructor(video_id, canvas_id){
+	constructor(video_id, canvas_id, callback){
 		this.video = document.getElementById(video_id)
 		this.canvas = document.getElementById(canvas_id)
 
@@ -10,7 +10,9 @@ class Camara{
 			
 
 				this.set_video(localMediaStream)	
-				this.set_canvas()		
+				this.set_canvas()
+
+				callback()		
 
 			},(err)=> console.log(err))						
 		}else{
@@ -33,6 +35,7 @@ class Camara{
 
 
 	loop(){
+		if(this.video.paused || this.video.ended) return
 		this.draw()
 		setInterval(()=> this.loop(), 1000 / 25)
 	}
