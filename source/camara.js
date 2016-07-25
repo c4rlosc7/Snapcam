@@ -45,6 +45,7 @@ class Camara{
 
 
 
+
 	constrains(){
 		return {
 			video: true

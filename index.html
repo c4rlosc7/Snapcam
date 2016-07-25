@@ -3,8 +3,39 @@
 <head>
 	<meta charset="utf-8">﻿
 	<title>Snapcam HTML5</title>
+	<style>
+		video{
+			display: none;
+		}
+		#camara{
+			position: relative;
+			border: solid 1px;
+			height: 480px;
+			width: 400px;
+		}
+		#canvas{
+			position: absolute;
+			top: 0px;
+			left: 0px;			
+		}
+		#snap{
+			position: absolute;
+			bottom: 1em;
+			border-radius: 50%;
+			background-color: rgba(230,230,0.6);
+			width: 100px;
+			height: 100px;
+		}
+	</style>
 </head>
-<body>	
+<body>
+
+	<div id="camara">
+		<canvas id="canvas" height="600" width="400"></canvas>
+		<button id="snap"> </button>
+	</div>
+
+
 	<canvas id="canvas"></canvas>
 	<video id="video" autoplay="true"></video>
 	<script src="source/camara.js"></script>
